@@ -1,5 +1,18 @@
-- name: Assign Issue
-  uses: actions-ecosystem/action-assign@v2
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    assignees: sean-hodgson # Replace X with the GitHub username of the team member
+name: Issue assignment
+
+on:
+    issues:
+        types: [opened]
+
+jobs:
+    auto-assign:
+        runs-on: ubuntu-latest
+        permissions:
+            issues: write
+        steps:
+            - name: 'Auto-assign issue'
+              uses: pozil/auto-assign-issue@v2
+              with:
+                  assignees: sean-hodgson
+                  numOfAssignee: 2
+                  allowSelfAssign: false
