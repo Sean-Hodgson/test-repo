@@ -14,5 +14,5 @@ jobs:
               uses: pozil/auto-assign-issue@v2
               with:
                   assignees: sean-hodgson
-                  numOfAssignee: 2
+                  numOfAssignee: 1
                   allowSelfAssign: false
